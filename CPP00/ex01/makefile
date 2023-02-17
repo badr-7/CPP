@@ -6,7 +6,8 @@ CC = c++
 
 RM = rm -f
 
-SRC = main.cpp\
+SRC =	main.cpp\
+		PhoneBook.cpp\
 
 OBJ = ${SRC:.cpp=.o}
 
