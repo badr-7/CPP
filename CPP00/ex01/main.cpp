@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 15:00:45 by mel-hous          #+#    #+#             */
-/*   Updated: 2022/12/31 15:00:47 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/02/19 17:05:38 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int main()
 {
     PhoneBook a;
     std::string input;
-    int i = 0;
-    int display = 0;
 
     std::cout<<std::endl<<"██████╗░██╗░░██╗░█████╗░███╗░░██╗███████╗██████╗░░█████╗░░█████╗░██╗░░██╗"<<std::endl
                      <<"██╔══██╗██║░░██║██╔══██╗████╗░██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██║░██╔╝"<<std::endl
@@ -38,18 +36,11 @@ int main()
         if(!std::getline(std::cin,input))
             break;
         if(input == "ADD")
-            a.Add(i++);
+            a.Add();
         else if(input == "EXIT")
-            a.Exit();
-        else if(input == "SEARCH" && display == 0)
-            a.Search(i);
-        else if(input == "SEARCH" && display == 1)
-            a.Search(8);
-        else if(i == 8)
-        {
-            display = 1;
-            i = 0;
-        }
+            break;
+        else if(input == "SEARCH")
+            a.Search();
     }
     return(0);
 }
