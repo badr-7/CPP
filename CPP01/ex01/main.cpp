@@ -6,7 +6,15 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:52:27 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/15 15:52:28 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:42:10 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+int main()
+{
+    Zombie *z = zombieHorde(10,"badr");
+
+    delete[] z;
+}

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 13:46:44 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/20 08:45:19 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/02/20 06:30:25 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/02/20 07:59:32 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Account.hpp"
 
-class Zombie
-{
-private:
-    std::string Name;
-public:
-    void announce(void);
-    void setzombiename(std::string z_name);
-    ~Zombie();
+int	Account::getNbAccounts( void ){
+    return(_nbAccounts);
 };
-
-Zombie* zombieHorde( int N, std::string name );
+//a storage class may not be specified here
+ int	Account::getTotalAmount( void ){
+    return(_totalAmount);
+ };
+ int	Account::getNbDeposits( void ){
+    return(_nbAccounts);
+ };
+ int	Account::getNbWithdrawals( void ){
+    // return(_nbWithdrawals);
+ };
+ void	Account::displayAccountsInfos( void ){
+    // return(_displaya)
+ };

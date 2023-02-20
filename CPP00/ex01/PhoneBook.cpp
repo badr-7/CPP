@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:20:46 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/19 17:06:34 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/02/20 15:26:55 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ void PhoneBook::Add()
                     exit(0);
             }
             contact[add_index].SetDarkestSecret(s);
-            add_index++;
             if(size < 8)
                 size = add_index + 1;
+            add_index++;
         };
 void PhoneBook::Search()
 {

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 13:46:44 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/20 08:45:19 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/02/20 08:56:20 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/02/20 09:02:14 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include<iostream>
 
-class Zombie
+int main()
 {
-private:
-    std::string Name;
-public:
-    void announce(void);
-    void setzombiename(std::string z_name);
-    ~Zombie();
-};
+    std::string s = "HI THIS IS BRAIN";
+    std::string *ptr = &s;
+    std::string &ref = s;
+    
+    std::cout<<&s<<std::endl;
+    std::cout<<ptr<<std::endl;
+    std::cout<<&ref<<std::endl;
 
-Zombie* zombieHorde( int N, std::string name );
+    
+    std::cout<<s<<std::endl;
+    std::cout<<*ptr<<std::endl;
+    std::cout<<ref<<std::endl;
+}
