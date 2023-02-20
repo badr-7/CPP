@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 13:46:44 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/20 08:45:19 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/02/20 14:58:25 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/02/20 17:46:32 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
-class Zombie
+int main(int ac, char **av) 
 {
-private:
-    std::string Name;
-public:
-    void announce(void);
-    void setzombiename(std::string z_name);
-    ~Zombie();
-};
-
-Zombie* zombieHorde( int N, std::string name );
+    if (ac < 4 || ac > 4)
+        std::cout << "ARGUMENTS NOT VALID" << std::endl;
+    return 0;
+}
