@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 11:23:17 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/21 08:05:47 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/02/21 15:20:49 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/02/21 16:40:46 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Weapon.hpp"
-// #include "HumanA.hpp"
-#include "HumanB.hpp"
+#include <iostream>
 
-int main()
-{
-{
-Weapon club =  Weapon("crude spiked club");
-HumanA bob("Bob", club);
-bob.attack();
-club.setType("some other type of club");
-bob.attack();
-}
-{
-Weapon club = Weapon("crude spiked club");
-HumanB jim("Jim");
-// jim.setWeapon(club);
-jim.attack();
-club.setType("some other type of club");
-jim.attack();
-}
-return 0;
-}
+class Harl{
+    private:
+        void debug( void );
+        void info( void );
+        void warning( void );
+        void error( void );
+    public:
+        void complain( std::string level );
+};
