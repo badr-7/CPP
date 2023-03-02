@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 18:20:46 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/20 15:26:55 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/02 13:30:51 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void PhoneBook::Search()
         <<std::setw(10)<<"first name"<< "|"
         <<std::setw(10)<<"last name"<< "|"
         <<std::setw(10)<<"nickname"<< "|"<<std::endl;
-    for(int j = 0; j < size - 1; j++)
+    for(int j = 0; j < size ; j++)
     {
         std::cout<<"|"<<std::setw(10)<<contact[j].index<< "|"
         <<std::setw(10)<<contact[j].GetFirstName()<< "|"
