@@ -3,5 +3,5 @@
 int main(void) {
     Harl obj;
 
-    obj.complain("'shit'");
+    obj.complain("ERROR");
 }

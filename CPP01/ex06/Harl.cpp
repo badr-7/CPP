@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:54:37 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/03 11:15:03 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/03 13:36:17 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,48 @@ void Harl::error( void ){
 
 
 void Harl::complain(std::string levle) {
+    int j;
     func all_complains[] = {&Harl::debug, &Harl::info,&Harl::warning,&Harl::error};
     std::string args[] = {std::string("DEBUG"),std::string("INFO"),std::string("WARNING"),std::string("ERROR")};
     for(int i = 0; i < 4; i++){
         if(levle == args[i])
-            (this->*all_complains[i])();
+            j = i;
     }
-        
+    switch (j)
+    {
+    case 0:
+        std::cout<<"[ DEBUG ]"<<std::endl;
+        (this->*all_complains[0])();
+        std::cout<<"\n[ INFO ]"<<std::endl;
+        (this->*all_complains[1])();
+        std::cout<<"\n[ WARNING ]"<<std::endl;
+        (this->*all_complains[2])();
+        std::cout<<"\n[ ERROR ]"<<std::endl;
+        (this->*all_complains[3])();
+        break;
+    case 1:
+        std::cout<<"[ INFO ]"<<std::endl;
+        (this->*all_complains[1])();
+        std::cout<<"\n[ WARNING ]"<<std::endl;
+        (this->*all_complains[2])();
+        std::cout<<"\n[ ERROR ]"<<std::endl;
+        (this->*all_complains[3])();
+        break;
+    case 2:
+        std::cout<<"[ WARNING ]"<<std::endl;
+        (this->*all_complains[2])();
+        std::cout<<"\n[ ERROR ]"<<std::endl;
+        (this->*all_complains[3])();
+        break;
+    case 3:
+        std::cout<<"[ ERROR ]"<<std::endl;
+        (this->*all_complains[3])();
+        break;
+    
+    default:
+    std::cout<<"[ Probably complaining about insignificant problems ]"<<std::endl;
+        break;
+    }
 };
 
 
