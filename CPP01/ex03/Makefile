@@ -1,14 +1,15 @@
-EXEC = Zombie_Horde
+EXEC = fight
 
-HEADR = Zombie.hpp
+HEADR = HumanB.hpp
 
 CC = c++
 
 CFLAGS = -Wextra -Wall -Werror -std=c++98
 
 SRC =	main.cpp\
-		zombieHorde.cpp\
-		Zombie.cpp\
+		HumanA.cpp\
+		HumanB.cpp\
+		Weapon.cpp\
 
 OBJS = ${SRC:.cpp=.o}
 
