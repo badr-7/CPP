@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:54:37 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/03 13:36:17 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/04 09:08:52 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void Harl::error( void ){
 
 
 void Harl::complain(std::string levle) {
-    int j;
+    int j = -1;
     func all_complains[] = {&Harl::debug, &Harl::info,&Harl::warning,&Harl::error};
     std::string args[] = {std::string("DEBUG"),std::string("INFO"),std::string("WARNING"),std::string("ERROR")};
     for(int i = 0; i < 4; i++){
@@ -72,16 +72,3 @@ void Harl::complain(std::string levle) {
         break;
     }
 };
-
-
-// void    test() {
-    
-// }
-
-
-
-
-// func    funcp = &Harl::complain;
-
-
-// funcp()
