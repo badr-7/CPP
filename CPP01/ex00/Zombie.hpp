@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:01:35 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/15 15:32:00 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/08 08:42:49 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 class Zombie
 {
 private:
-    std::string Name;
+    std::string _Name;
 public:
     void announce( void );
-    void setzombiename(std::string z_name);
+    Zombie(std::string name);
     ~Zombie();
 };
 

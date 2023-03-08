@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 13:46:44 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/20 08:45:19 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/08 08:50:51 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ private:
 public:
     void announce(void);
     void setzombiename(std::string z_name);
+    Zombie();
     ~Zombie();
 };
 

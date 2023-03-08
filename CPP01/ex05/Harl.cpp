@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 15:54:37 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/03 11:15:03 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/08 14:45:31 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,4 @@ void Harl::complain(std::string levle) {
         if(levle == args[i])
             (this->*all_complains[i])();
     }
-        
 };
-
-
-// void    test() {
-    
-// }
-
-
-
-
-// func    funcp = &Harl::complain;
-
-
-// funcp()
