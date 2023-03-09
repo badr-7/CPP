@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:52:27 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/20 17:42:10 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:47:30 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    Zombie *z = zombieHorde(10,"badr");
+    Zombie *z = zombieHorde(1,"badr");
 
     delete[] z;
 }

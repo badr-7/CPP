@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 14:47:31 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/08 08:47:31 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:48:07 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void Zombie::announce( void )
 };
 
 Zombie::~Zombie(){
-        std::cout<< _Name << " deleted" <<std::endl;
+        std::cout<< _Name << " destroyed" <<std::endl;
     };
