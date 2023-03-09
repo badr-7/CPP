@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:33:29 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/02/15 15:52:06 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:48:28 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void Zombie::setzombiename(std::string z_name)
 };
 
 Zombie::~Zombie(){
-    std::cout<< this->Name <<std::endl;
+    std::cout<< this->Name << " destroyed" <<std::endl;
 };

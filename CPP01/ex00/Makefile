@@ -2,9 +2,9 @@ EXEC = Zombie
 
 HEADR = Zombie.hpp
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wextra -Wall -Werror -std=c++98
+CXXFLAGS = -Wextra -Wall -Werror -std=c++98
 
 SRC =	main.cpp\
 		newZombie.cpp\
@@ -16,7 +16,7 @@ OBJS = ${SRC:.cpp=.o}
 all : ${EXEC}
 
 ${EXEC} : ${OBJS} ${HEADR}
-		${CC} ${CFLAGS} ${OBJS} -o ${EXEC}
+		${CXX} ${CXXFLAGS} ${OBJS} -o ${EXEC}
 
 clean : 
 		rm -rf ${OBJS}
