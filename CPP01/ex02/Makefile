@@ -1,13 +1,13 @@
 EXEC = BRAIN
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wextra -Wall -Werror -std=c++98
+CXXFLAGS = -Wextra -Wall -Werror -std=c++98
 
 all : ${EXEC}
 
 ${EXEC} : main.o
-		${CC} ${CFLAGS} main.o  -o ${EXEC}
+		${CXX} ${CXXFLAGS} main.o  -o ${EXEC}
 
 clean : 
 		rm -rf main.o
