@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:56:28 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/09 18:30:47 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/10 09:56:01 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ class FixedPoint{
         FixedPoint(FixedPoint &i);
         int getRawBits( void ) const;
         void setRawBits(int const raw);
+        FixedPoint& operator=(FixedPoint &obj2);
         ~FixedPoint();
 };
