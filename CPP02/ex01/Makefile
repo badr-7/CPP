@@ -16,9 +16,7 @@ OBJS = ${SRC:.cpp=.o}
 all : ${EXEC}
 
 ${EXEC} : ${OBJS} ${HEADR}
-		${CXX} ${CXX
-		
-		
+		${CXX} ${CXXFLAGS} ${OBJS} -o ${EXEC} 
 
 clean : 
 		${RM} ${OBJS}
