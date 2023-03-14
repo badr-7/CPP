@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 15:33:00 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/14 16:03:43 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/03/14 13:04:45 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/03/14 13:51:34 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int	main()
 {
-    public :
-        ScavTrap();
-        ScavTrap(ScavTrap &other);
-        ScavTrap(std::string &name);
-        ~ScavTrap();
-        void guardGate();
-};
+
+	ClapTrap trap("badr");
+	ClapTrap clap(trap);
+    
+
+	std::cout << std::endl;
+	
+	clap.attack("said");
+	clap.takeDamage(0);
+	clap.beRepaired(20);
+	
+	std::cout << std::endl;
+	
+	clap.attack("simo");
+	clap.takeDamage(20);
+	clap.beRepaired(5);
+	
+	std::cout << std::endl;
+
+	return 0;
+}

@@ -6,14 +6,14 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:47:41 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/14 15:58:09 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/14 15:45:13 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 class ClapTrap {
-    protected:
+    private:
         std::string _name;
         int _hitPoints;
         int _energyPoints;
