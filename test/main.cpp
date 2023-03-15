@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 10:40:06 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/03 10:41:13 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/15 10:30:34 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int main()
 {
-    badr obj;
+    melhous obj;
 
-    obj.wich_one();
+    obj.set(42);
+    std::cout<<obj.get()<<std::endl;
 }
