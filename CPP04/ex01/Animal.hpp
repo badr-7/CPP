@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 15:20:25 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/16 10:23:25 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:07:23 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ class Animal{
         virtual std::string getType() const;
         virtual  void makeSound() const{};
         Animal &operator=(const Animal& other);  
-        ~Animal();
+        virtual ~Animal();
 };
