@@ -6,7 +6,7 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 16:54:35 by mel-hous          #+#    #+#              #
-#    Updated: 2023/03/16 17:06:40 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/03/17 11:56:02 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,10 @@ CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
 SRC =	main.cpp\
 		Animal.cpp\
+		WrongAnimal.cpp\
 		Dog.cpp\
 		Cat.cpp\
+		WrongCat.cpp\
 
 OBJS = ${SRC:.cpp=.o}
 
