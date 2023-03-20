@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 14:08:17 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/20 13:08:18 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/20 13:18:38 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,4 @@ Animal &Animal::operator=(const Animal& other){
     std::cout<< "Animal Copy op called"<<std::endl;
     this->type = other.type;
     return *this;
-};
-
-Animal::~Animal(){
-    
 };
