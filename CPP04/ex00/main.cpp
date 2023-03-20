@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:45:27 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/17 11:56:41 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/20 08:25:03 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
     
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); 
+    i->makeSound();
     j->makeSound();
     meta->makeSound();
     w->makeSound();
