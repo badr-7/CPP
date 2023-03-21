@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:53:36 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/21 14:43:55 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:04:34 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,10 @@ Character & Character::operator = (const Character &other){
  void Character::use(int idx, ICharacter& target){
     matirais[idx]->use(target);
  };
+
+Character::Character (std::string name){
+    _name = name;
+};
+std::string const & Character::getName() const{
+    return(_name);
+};
