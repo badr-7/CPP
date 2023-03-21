@@ -6,16 +6,19 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:53:36 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/21 15:04:34 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:24:33 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Character.hpp"
 
 Character::Character(){
-
+    for (int i = 0; i < 4; i++)
+        matirais[i] = NULL;
 };
 Character::Character(const Character &other){
+    for (int i = 0; i < 4; i++)
+        matirais[i] = NULL;
     this->_name = other._name;
     *this = other;
 };
@@ -49,10 +52,16 @@ Character & Character::operator = (const Character &other){
  };
 
  void Character::use(int idx, ICharacter& target){
-    matirais[idx]->use(target);
+    if(idx >= 0 && idx < 4)
+    {
+        if(matirais[idx])
+            matirais[idx]->use(target);
+    }
  };
 
 Character::Character (std::string name){
+    for (int i = 0; i < 4; i++)
+        matirais[i] = NULL;
     _name = name;
 };
 std::string const & Character::getName() const{
