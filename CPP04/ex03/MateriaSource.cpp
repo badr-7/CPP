@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:47:03 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/21 15:25:12 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:30:18 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 MateriaSource::MateriaSource(){
     for (int i = 0; i < 4; i++)
         materias[i] = NULL;
-};
+}
 MateriaSource::MateriaSource(const MateriaSource &other){
      for (int i = 0; i < 4; i++)
         materias[i] = NULL;
     *this = other;
-};
+}
 MateriaSource::~MateriaSource(){
     
-};
+}
 MateriaSource & MateriaSource::operator = (const MateriaSource &other){
     for (int i = 0; i < 4; i++)
     {
@@ -32,7 +32,7 @@ MateriaSource & MateriaSource::operator = (const MateriaSource &other){
             materias[i] = other.materias[i]->clone();
     }
     return *this;
-};
+}
 void MateriaSource::learnMateria(AMateria* m){
     for (int i = 0; i < 4; i++){
         if (materias[i] == NULL)
@@ -41,7 +41,7 @@ void MateriaSource::learnMateria(AMateria* m){
             break;
         }
     }    
-};
+}
 AMateria* MateriaSource::createMateria(std::string const & type){
     for (int i = 0; i < 4; i++)
     {
@@ -49,4 +49,4 @@ AMateria* MateriaSource::createMateria(std::string const & type){
             return(materias[i]->clone());
     }
     return 0;
-};
+}
