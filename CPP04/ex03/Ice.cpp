@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:54:52 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/21 14:45:15 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/03/21 13:51:24 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/03/21 13:57:52 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include<iostream>
-#include"IMateriaSoutce.hpp"
+#include"Ice.hpp"
 
-class MateriaSource : public IMateriaSource
-{
-public:
-    MateriaSource ();
-    MateriaSource (const MateriaSource &other);
-    ~MateriaSource ();
-    MateriaSource & operator = (const MateriaSource &a);
-    void learnMateria(AMateria*);
-    AMateria* createMateria(std::string const & type);
+Ice::Ice(){
+
+};
+Ice::Ice(const Ice &other){
+    *this = other;
+};
+Ice::~Ice(){
+    
+};
+Ice & Ice::operator = (const Ice &other){
+   std::cout<< "Ice: * shoots an ice bolt at "<< "<name>"<< " *"<< std::endl;
 };

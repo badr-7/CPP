@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/20 15:54:52 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/21 14:45:15 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/03/21 13:51:12 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/03/21 14:03:14 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include<iostream>
-#include"IMateriaSoutce.hpp"
+#include"Cure.hpp"
 
-class MateriaSource : public IMateriaSource
-{
-public:
-    MateriaSource ();
-    MateriaSource (const MateriaSource &other);
-    ~MateriaSource ();
-    MateriaSource & operator = (const MateriaSource &a);
-    void learnMateria(AMateria*);
-    AMateria* createMateria(std::string const & type);
+Cure::Cure(){
+    _type = "cure";
+};
+Cure::Cure(const Cure &other){
+    _type = "cure";
+    *this = other;
+};
+Cure::~Cure(){
+    
+};
+Cure & Cure::operator = (const Cure &other){
+    
+};
+
+AMateria* Cure::clone() const{
+    Cure* other = new Cure();
+    return other; 
+};
+void Cure::use(ICharacter& target){
+    std::cout<< "Cure: * heals "<< "<name>"<< "'s wounds *"<<std::endl;
 };
