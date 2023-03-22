@@ -6,7 +6,7 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/17 11:59:04 by mel-hous          #+#    #+#              #
-#    Updated: 2023/03/17 15:33:51 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/03/22 10:21:59 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,6 @@ SRC =	main.cpp\
 		Dog.cpp\
 		Cat.cpp\
 		Brain.cpp\
-		# WrongAnimal.cpp\
-		# WrongCat.cpp\
 
 OBJS = ${SRC:.cpp=.o}
 
