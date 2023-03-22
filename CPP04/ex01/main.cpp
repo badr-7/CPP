@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:45:27 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/20 08:52:05 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:52:57 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,26 @@
 int main()
 {
     const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    
+    j->makeSound();
     delete j;
-    delete i;
+	j = new Cat();
+    j->makeSound();
+	delete j;
     
-    Animal	*a[4];
+    Animal	*a[8];
 
-
-	for(int i=0; i<4; i++) {
-		if (i < 2) {
-			a[i] = new Cat();
-		}
-		else {
+	for(int i=0; i<8; i++) {
+		if (i < 4) {
 			a[i] = new Dog();
 		}
+		else {
+			a[i] = new Cat();
+		}
 	}
-	for(int i=0; i<4; i++) {
+	for(int i=0; i<8; i++) {
+		std::cout<<a[i]->getType()<<std::endl;
 		a[i]->makeSound();
-	}
-	
-	for(int i=0; i<4; i++) {
 		delete a[i];
 	}
-    
     return 0;
 }
