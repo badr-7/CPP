@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 14:47:03 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/03/21 16:30:18 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/03/22 14:12:37 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ MateriaSource::MateriaSource(const MateriaSource &other){
     *this = other;
 }
 MateriaSource::~MateriaSource(){
-    
+     for (int i = 0; i < 4; i++)
+        delete materias[i];
 }
 MateriaSource & MateriaSource::operator = (const MateriaSource &other){
     for (int i = 0; i < 4; i++)
