@@ -10,9 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include"Bureaucrat.hpp"
 
-class Bureaucrat
-{
+Bureaucrat::Bureaucrat() : name("default") , grade(150)
+{}
+Bureaucrat::~Bureaucrat(){
+    
+}
+Bureaucrat::Bureaucrat(Bureaucrat& other){
+    *this = other;
+}
+Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name){
+    this->grade = Grade;
+    if(this->grade < 1)
+        throw GradeTooHighException();
+    if(this->grade > 150)
+        throw GradeTooLowException();
+}
 
-};
+std::string Bureaucrat::getName(){
+    return this->name;
+}
+
+int Bureaucrat::getGrade(){
+    return this->grade;
+}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
+    this->grade = other.grade;
+    return *this;
+}
+
+void Bureaucrat::IncrementGrade(){
+    this->grade--;
+    if(this->grade < 1)
+        throw GradeTooHighException();
+}
+void Bureaucrat::decrementGrade(){
+    this->grade++;
+    if(this->grade > 150)
+        throw GradeTooLowException();
+}

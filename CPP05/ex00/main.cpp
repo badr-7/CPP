@@ -10,3 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
+
+int main()
+{
+    try{
+        Bureaucrat("badr",0);
+    }
+    catch(std::exception &ex){
+        std::cout<<ex.what()<<std::endl;
+    }
+}

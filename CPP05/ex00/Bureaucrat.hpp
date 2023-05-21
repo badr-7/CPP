@@ -10,3 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+#include <iostream>
+
+class Bureaucrat
+{
+private:
+    std::string const name;
+    int grade;
+public:
+    Bureaucrat();
+    Bureaucrat(Bureaucrat&);
+    Bureaucrat(std::string, int);
+    ~Bureaucrat();
+    std::string getName();
+    int getGrade();
+    Bureaucrat& operator=(const Bureaucrat& other);
+    void IncrementGrade();
+    void decrementGrade();
+    class GradeTooHighException : public std::exception{
+        const char* what() const throw(){
+            return ("Grade To High");
+        }
+    };
+    class GradeTooLowException : public std::exception{
+           const char* what() const throw(){
+            return ("Grade To Low");
+        }
+    };
+};
