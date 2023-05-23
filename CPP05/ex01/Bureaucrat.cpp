@@ -6,11 +6,12 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:14 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/04/08 10:25:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/05/23 10:22:13 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Bureaucrat.hpp"
+#include"Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("default") , grade(150)
 {}
@@ -51,3 +52,12 @@ void Bureaucrat::decrementGrade(){
     if(this->grade > 150)
         throw GradeTooLowException();
 }
+void Bureaucrat::signForm(Form &obj){
+    try{
+        obj.beSigned(*this);
+    }catch(std::exception &ex){
+         std::cout << this->name << " couldn't sign " << obj.getname()<<" because " << ex.what() <<std::endl;
+    }
+    if (obj.getsign())
+        std::cout << this->name << " signed " << obj.getname()<<std::endl;
+};
