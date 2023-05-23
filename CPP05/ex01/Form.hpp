@@ -6,11 +6,13 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:08:54 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/05/21 09:37:16 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/05/23 09:56:56 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
+#include "Bureaucrat.hpp"
 
 
 class Form{
@@ -39,4 +41,5 @@ class Form{
         bool getsign();
         int getGradetosign();
         int getGradetoexecute();
+        void beSigned(Bureaucrat &);
 };
