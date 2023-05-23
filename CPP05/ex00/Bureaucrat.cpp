@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:14 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/04/08 10:25:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/05/23 09:42:14 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,9 @@ void Bureaucrat::decrementGrade(){
     this->grade++;
     if(this->grade > 150)
         throw GradeTooLowException();
+}
+
+std::ostream&   operator<<(std::ostream &out,  Bureaucrat &Obj){
+    out << Obj.getName() << ", bureaucrat grade " << Obj.getGrade() << std::endl ;
+    return out;
 }
