@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:53 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/04/08 10:23:55 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/05/23 09:39:26 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,4 @@ public:
         }
     };
 };
+std::ostream&   operator<<(std::ostream &out,  Bureaucrat &Obj);
