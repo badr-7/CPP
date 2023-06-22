@@ -6,18 +6,17 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:14 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/05/23 10:27:06 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/22 15:34:27 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Bureaucrat.hpp"
 #include"Form.hpp"
 
-Bureaucrat::Bureaucrat() : name("default") , grade(150)
-{}
-Bureaucrat::~Bureaucrat(){
-    
-}
+/////////////////////////////////////////////////////////////////////[CONSTRUCTORS]
+
+Bureaucrat::Bureaucrat() : name("default") , grade(150){
+}    
 Bureaucrat::Bureaucrat(Bureaucrat& other){
     *this = other;
 }
@@ -29,18 +28,27 @@ Bureaucrat::Bureaucrat(std::string Name, int Grade) : name(Name){
         throw GradeTooLowException();
 }
 
-std::string Bureaucrat::getName(){
-    return this->name;
-}
-
-int Bureaucrat::getGrade(){
-    return this->grade;
-}
+/////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other){
     this->grade = other.grade;
     return *this;
 }
+std::ostream&   operator<<(std::ostream &out,  Bureaucrat &Obj){
+    out << Obj.getName() << ", bureaucrat grade " << Obj.getGrade() << std::endl ;
+    return out;
+}
+
+/////////////////////////////////////////////////////////////////////[GETTERS]
+
+std::string Bureaucrat::getName(){
+    return this->name;
+}
+int Bureaucrat::getGrade(){
+    return this->grade;
+}
+
+/////////////////////////////////////////////////////////////////////[FUNCTIONS]
 
 void Bureaucrat::IncrementGrade(){
     this->grade--;
@@ -60,4 +68,9 @@ void Bureaucrat::signForm(Form &obj){
     }
     if (obj.getsign())
         std::cout << this->name << " signed " << obj.getname()<<std::endl;
-};
+}
+
+/////////////////////////////////////////////////////////////////////[DESTRUCTORS]
+
+Bureaucrat::~Bureaucrat(){
+}
