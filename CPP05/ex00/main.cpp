@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:50 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/22 16:34:43 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:05:08 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 int main()
 {
 
-    try{
+    try
+    {
         Bureaucrat obj("aaaa", 150);
         std::cout << obj;
-        Bureaucrat("badr",0);
+        Bureaucrat("badr", 0);
     }
-    catch(std::exception &ex){
-        std::cout<<ex.what()<<std::endl;
+    catch (std::exception &ex)
+    {
+        std::cout << ex.what() << std::endl;
     }
 }
