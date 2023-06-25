@@ -6,7 +6,7 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/22 17:56:43 by mel-hous          #+#    #+#              #
-#    Updated: 2023/06/22 17:56:45 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/06/25 08:47:41 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
 SRC =	Bureaucrat.cpp\
+		Form.cpp\
 		main.cpp\
 		
 
