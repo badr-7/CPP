@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:09:02 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/22 15:18:15 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/25 09:47:06 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,47 +14,70 @@
 
 /////////////////////////////////////////////////////////////////////[CONSTRUCTORS]
 
-Form::Form() : GradeToExecute(150), GradeToSign(150), name("default"){
+Form::Form() : name("default"), GradeToSign(150), GradeToExecute(150)
+{
     this->_signed = false;
 }
-Form::Form(Form &other) : GradeToExecute(other.GradeToExecute), GradeToSign(other.GradeToSign), name(other.name){
+Form::Form(Form &other) : name(other.name), GradeToSign(other.GradeToSign), GradeToExecute(other.GradeToExecute)
+{
     this->_signed = other._signed;
 }
-Form::Form(std::string Name,bool Sign,int gradetoexecute,int gradetosign) : GradeToExecute(gradetoexecute), GradeToSign(gradetosign), name(Name){
-     this->_signed = Sign;
+Form::Form(std::string Name, bool Sign, int gradetoexecute, int gradetosign) : name(Name), GradeToSign(gradetosign), GradeToExecute(gradetoexecute)
+{
+    this->_signed = Sign;
 }
 
 /////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
 
-Form &Form::operator=(const Form& other){
-    
+Form &Form::operator=(const Form &other)
+{
+    (void)other;
+    return *this;
+}
+std::ostream &operator<<(std::ostream &out, Form &br)
+{
+    out << br.getname() << ",  sign " << br.getsign() << ", Sign Grade " << br.getGradetosign() << ", Execute Grade " << br.getGradetoexecute() << std::endl;
+    return out;
 }
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 
-std::string Form::getname(){
+std::string Form::getname()
+{
     return this->name;
 }
-bool Form::getsign(){
+bool Form::getsign()
+{
     return this->_signed;
 }
-int Form::getGradetosign(){
+int Form::getGradetosign()
+{
     return this->GradeToSign;
 }
-int Form::getGradetoexecute(){
-    return this->GradeToExecute; 
+int Form::getGradetoexecute()
+{
+    return this->GradeToExecute;
 }
 
 /////////////////////////////////////////////////////////////////////[FUNCTIONS]
 
-void Form::beSigned(Bureaucrat &obj){
-    if(obj.getGrade() <= this->GradeToSign)
+void Form::beSigned(Bureaucrat &obj)
+{
+    if (obj.getGrade() <= this->GradeToSign)
         this->_signed = true;
     else
         throw GradeTooLowException();
 }
-
+const char *Form::GradeTooHighException::what() const throw()
+{
+    return ("Grade To High");
+}
+const char *Form::GradeTooLowException::what() const throw()
+{
+    return ("Grade To Low");
+}
 /////////////////////////////////////////////////////////////////////[DESTRUCTORS]
 
-Form::~Form(){
+Form::~Form()
+{
 }

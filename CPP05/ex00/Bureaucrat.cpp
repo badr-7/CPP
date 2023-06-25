@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:14 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/24 13:05:03 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/24 13:24:17 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,15 @@ void Bureaucrat::decrementGrade()
     this->grade++;
     if (this->grade > 150)
         throw GradeTooLowException();
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return ("Grade To High");
+}
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return ("Grade To Low");
 }
 
 /////////////////////////////////////////////////////////////////////[DESTRUCTORS]
