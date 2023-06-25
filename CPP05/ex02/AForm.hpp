@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:28 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/24 15:29:51 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/25 10:12:11 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,22 @@ public:
     AForm();
     AForm(AForm &);
     AForm(std::string, bool, int, int);
-    ~AForm(){};
-    virtual AForm &operator=(const AForm &other) = 0;
+    ~AForm();
+    AForm &operator=(const AForm &other);
+    virtual void  executeForm(Form const & form) = 0;
     class GradeTooHighException : public std::exception
     {
-        const char *what() const throw()
-        {
-            return ("Grade To High");
-        }
+        const char *what() const throw();
     };
     class GradeTooLowException : public std::exception
     {
-        const char *what() const throw()
-        {
-            return ("Grade To Low");
-        }
+        const char *what() const throw();
     };
-    virtual std::string getname() = 0;
-    virtual bool getsign() = 0;
-    virtual int getGradetosign() = 0;
-    virtual int getGradetoexecute() = 0;
-    virtual void beSigned(Bureaucrat &) = 0;
+    std::string getname();
+    bool getsign();
+    int getGradetosign();
+    int getGradetoexecute();
+    void beSigned(Bureaucrat &);
 };
+
+std::ostream &operator<<(std::ostream &out, AForm &br);

@@ -6,43 +6,78 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:24 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/05/25 09:48:00 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/25 09:58:36 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "AForm.hpp"
+#include "AForm.hpp"
 
-// AForm::AForm() : GradeToExecute(150), GradeToSign(150), name("default"){
-//     this->_signed = false;
-// }
-// AForm::AForm(AForm &other) : GradeToExecute(other.GradeToExecute), GradeToSign(other.GradeToSign), name(other.name){
-//     this->_signed = other._signed;
-// }
-// AForm::AForm(std::string Name,bool Sign,int gradetoexecute,int gradetosign) : GradeToExecute(gradetoexecute), GradeToSign(gradetosign), name(Name){
-//      this->_signed = Sign;
-// }
-// AForm::~AForm(){
+/////////////////////////////////////////////////////////////////////[CONSTRUCTORS]
 
-// }
-// AForm &AForm::operator=(const AForm& other){
-    
-// } 
-// std::string AForm::getname(){
-//     return this->name;
-// }
-// bool AForm::getsign(){
-//     return this->_signed;
-// }
-// int AForm::getGradetosign(){
-//     return this->GradeToSign;
-// }
-// int AForm::getGradetoexecute(){
-//     return this->GradeToExecute; 
-// }
+AForm::AForm() : name("default"), GradeToSign(150), GradeToExecute(150)
+{
+    this->_signed = false;
+}
+AForm::AForm(AForm &other) : name(other.name), GradeToSign(other.GradeToSign), GradeToExecute(other.GradeToExecute)
+{
+    this->_signed = other._signed;
+}
+AForm::AForm(std::string Name, bool Sign, int gradetoexecute, int gradetosign) : name(Name), GradeToSign(gradetosign), GradeToExecute(gradetoexecute)
+{
+    this->_signed = Sign;
+}
 
-// void AForm::beSigned(Bureaucrat &obj){
-//     if(obj.getGrade() <= this->GradeToSign)
-//         this->_signed = true;
-//     else
-//         throw GradeTooLowException();
-// }
+/////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
+
+AForm &AForm::operator=(const AForm &other)
+{
+    (void)other;
+    return *this;
+}
+std::ostream &operator<<(std::ostream &out, AForm &br)
+{
+    out << br.getname() << ",  sign " << br.getsign() << ", Sign Grade " << br.getGradetosign() << ", Execute Grade " << br.getGradetoexecute() << std::endl;
+    return out;
+}
+
+/////////////////////////////////////////////////////////////////////[GETTERS]
+
+std::string AForm::getname()
+{
+    return this->name;
+}
+bool AForm::getsign()
+{
+    return this->_signed;
+}
+int AForm::getGradetosign()
+{
+    return this->GradeToSign;
+}
+int AForm::getGradetoexecute()
+{
+    return this->GradeToExecute;
+}
+
+/////////////////////////////////////////////////////////////////////[FUNCTIONS]
+
+void AForm::beSigned(Bureaucrat &obj)
+{
+    if (obj.getGrade() <= this->GradeToSign)
+        this->_signed = true;
+    else
+        throw GradeTooLowException();
+}
+const char *AForm::GradeTooHighException::what() const throw()
+{
+    return ("Grade To High");
+}
+const char *AForm::GradeTooLowException::what() const throw()
+{
+    return ("Grade To Low");
+}
+/////////////////////////////////////////////////////////////////////[DESTRUCTORS]
+
+AForm::~AForm()
+{
+}
