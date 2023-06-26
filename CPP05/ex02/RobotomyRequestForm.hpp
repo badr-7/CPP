@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:47 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 10:32:17 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/26 08:53:41 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 class RobotomyRequestForm : public AForm
 {
 private:
-    /* data */
+   std::string Target;
 public:
-    RobotomyRequestForm(RobotomyRequestForm& other);
-    RobotomyRequestForm(/* args */);
+    RobotomyRequestForm();
+    RobotomyRequestForm(std::string);
+    RobotomyRequestForm(RobotomyRequestForm&);
+    void   execute(Bureaucrat const &) const;
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
     ~RobotomyRequestForm();
 };

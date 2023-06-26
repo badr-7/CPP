@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:42 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 10:30:09 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/26 08:49:49 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 class PresidentialPardonForm : public AForm
 {
 private:
-    /* data */
+    std::string Target;
 public:
-    PresidentialPardonForm(/* args */);
-    PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm& other);
+    PresidentialPardonForm();
+    PresidentialPardonForm(std::string);
+    PresidentialPardonForm(PresidentialPardonForm& );
+    void    PresidentialPardonForm::execute(Bureaucrat const &) const;
     PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
     ~PresidentialPardonForm();
 };
