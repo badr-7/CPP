@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:24 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 09:58:36 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/26 17:41:00 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ std::ostream &operator<<(std::ostream &out, AForm &br)
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 
-std::string AForm::getname()
+std::string AForm::getname() const
 {
     return this->name;
 }
-bool AForm::getsign()
+bool AForm::getsign() const
 {
     return this->_signed;
 }
-int AForm::getGradetosign()
+int AForm::getGradetosign() const
 {
     return this->GradeToSign;
 }
-int AForm::getGradetoexecute()
+int AForm::getGradetoexecute() const
 {
     return this->GradeToExecute;
 }

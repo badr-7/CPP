@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:28 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/26 08:54:00 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/26 17:39:08 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ public:
     {
         const char *what() const throw();
     };
-    std::string getname();
-    bool getsign();
-    int getGradetosign();
-    int getGradetoexecute();
+    std::string getname() const;
+    bool getsign() const;
+    int getGradetosign() const;
+    int getGradetoexecute() const;
     void beSigned(Bureaucrat &);
 };
 

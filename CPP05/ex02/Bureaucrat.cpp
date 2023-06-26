@@ -6,12 +6,12 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:32 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 09:59:29 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/26 17:43:14 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /////////////////////////////////////////////////////////////////////[CONSTRUCTORS]
 
@@ -46,11 +46,11 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &Obj)
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return this->name;
 }
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
@@ -69,7 +69,7 @@ void Bureaucrat::decrementGrade()
     if (this->grade > 150)
         throw GradeTooLowException();
 }
-void Bureaucrat::signForm(Form &obj)
+void Bureaucrat::signForm(AForm &obj)
 {
     try
     {
@@ -89,6 +89,17 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()
 const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return ("Grade To Low");
+}
+
+void	Bureaucrat::executeForm(AForm const &form)
+{
+    if(form.getsign())
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getname() << std::endl;
+    }
+    else
+        std::cout << this->getName() << " cannot executes " << form.getname() << std::endl;
 }
 
 /////////////////////////////////////////////////////////////////////[DESTRUCTORS]

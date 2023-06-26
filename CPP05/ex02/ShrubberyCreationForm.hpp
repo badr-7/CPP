@@ -6,12 +6,13 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:51 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/26 08:53:53 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/26 17:37:10 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "AForm.hpp"
+#include <iostream>
 
 class ShrubberyCreationForm : public AForm
 {
