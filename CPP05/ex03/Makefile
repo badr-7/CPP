@@ -6,7 +6,7 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/23 10:29:54 by mel-hous          #+#    #+#              #
-#    Updated: 2023/06/27 10:29:53 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/06/27 13:23:35 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC =	Bureaucrat.cpp\
 		PresidentialPardonForm.cpp\
 		RobotomyRequestForm.cpp\
 		ShrubberyCreationForm.cpp\
+		Intern.cpp\
 		main.cpp\
 		
 

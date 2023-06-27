@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:37 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 09:50:35 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:43:31 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,54 +15,73 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	try
-    {
-        AForm *form = new ShrubberyCreationForm("ShrubberyCreationForm");
-        Bureaucrat bureaucrat("imad", 40);
-        form->beSigned(bureaucrat);
-        bureaucrat.signForm(*form);
-        bureaucrat.executeForm(*form);
-        delete form;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    
-	std::cout << std::endl;
-    
     try
     {
-        AForm *form1 = new RobotomyRequestForm("RRobotomyrequest");
-        Bureaucrat bureaucrat1("abid", 45);
-        form1->beSigned(bureaucrat1);
-        bureaucrat1.signForm(*form1);
-        bureaucrat1.executeForm(*form1);
-        delete form1;
+        Bureaucrat imad("imad", 100);
+
+        Intern form;
+        AForm *Azol = form.makeForm("shrubbery creation", "Azol");
+        std::cout << Azol->getname() << std::endl;
+        Azol->beSigned(imad);
+        imad.signForm(*Azol);
+        imad.executeForm(*Azol);
+        delete Azol;
     }
-    catch(const std::exception& e)
+    catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
-    
-	std::cout << std::endl;
-    
     try
     {
-        AForm *form2 = new PresidentialPardonForm("PresidentialPardon");
-        Bureaucrat bureaucrat2("imabid", 5);
-        form2->beSigned(bureaucrat2);
-        bureaucrat2.signForm(*form2);
-        bureaucrat2.executeForm(*form2);
-        delete form2;
+        Bureaucrat abid("abid", 40);
+
+        Intern form;
+        AForm *Ayour = form.makeForm("robotomy request", "Ayour");
+        std::cout << Ayour->getname() << std::endl;
+        Ayour->beSigned(abid);
+        abid.signForm(*Ayour);
+        abid.executeForm(*Ayour);
+        delete Ayour;
     }
-    catch(const std::exception& e)
+    catch (std::exception &e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
-    
-    return (0);
+    try
+    {
+        Bureaucrat imabid("imabid", 3);
+
+        Intern form;
+        AForm *Tafokt = form.makeForm("presidential pardon", "Tafokt");
+        std::cout << Tafokt->getname() << std::endl;
+        Tafokt->beSigned(imabid);
+        imabid.signForm(*Tafokt);
+        imabid.executeForm(*Tafokt);
+        delete Tafokt;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    try
+    {
+        Bureaucrat hello("hello", 3);
+
+        Intern form;
+        AForm *titrit = form.makeForm("Wrong form", "Titirit");
+        std::cout << titrit->getname() << std::endl;
+        titrit->beSigned(hello);
+        hello.signForm(*titrit);
+        hello.executeForm(*titrit);
+        delete titrit;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+    return 0;
 }
