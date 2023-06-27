@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:28 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/26 17:39:08 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/27 09:51:48 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ private:
 public:
     AForm();
     AForm(AForm &);
-    AForm(std::string, bool, int, int);
-    ~AForm();
+    AForm(std::string, int, int);
+    virtual ~AForm();
     AForm &operator=(const AForm &other);
     virtual void  execute(Bureaucrat const &) const = 0;
     class GradeTooHighException : public std::exception

@@ -6,14 +6,14 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:34 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/26 17:40:21 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/27 09:45:44 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
-class Form;
+class AForm;
 class Bureaucrat
 {
 private:

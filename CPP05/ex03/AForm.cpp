@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:24 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/26 17:41:00 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/27 09:36:02 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ AForm::AForm(AForm &other) : name(other.name), GradeToSign(other.GradeToSign), G
 {
     this->_signed = other._signed;
 }
-AForm::AForm(std::string Name, bool Sign, int gradetoexecute, int gradetosign) : name(Name), GradeToSign(gradetosign), GradeToExecute(gradetoexecute)
+AForm::AForm(std::string Name, int gradetosign ,int gradetoexecute) : name(Name), GradeToSign(gradetosign), GradeToExecute(gradetoexecute)
 {
-    this->_signed = Sign;
+    this->_signed = false;
 }
 
 /////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
