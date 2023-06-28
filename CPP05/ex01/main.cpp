@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:50 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 09:47:02 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:47:28 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 
 int main(void)
 {
-    Form imad("imad", false, 10, 20);
-    Bureaucrat abid("abid", 18);
-    try
-    {
-        imad.beSigned(abid);
-        abid.signForm(imad);
-        std::cout << imad;
-        std::cout << abid;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    abid.signForm(imad);
+    Form project("cpp05", 100, 101);
+    Bureaucrat melhous("mel-hous", 100);
+    Bureaucrat badr("badr", 125);
+    project.beSigned(melhous);
+    melhous.signForm(project);
+    std::cout << project;
+    std::cout << melhous;
+    badr.signForm(project);
     return 0;
 }

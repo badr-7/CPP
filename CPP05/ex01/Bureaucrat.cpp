@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:14 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/24 13:44:42 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:43:19 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     this->grade = other.grade;
     return *this;
 }
-std::ostream &operator<<(std::ostream &out, Bureaucrat &Obj)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &Obj)
 {
     out << Obj.getName() << ", bureaucrat grade " << Obj.getGrade() << std::endl;
     return out;
@@ -46,11 +46,11 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &Obj)
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return this->name;
 }
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }
@@ -74,13 +74,12 @@ void Bureaucrat::signForm(Form &obj)
     try
     {
         obj.beSigned(*this);
+        std::cout << this->name << " signed " << obj.getname() << std::endl;
     }
     catch (std::exception &ex)
     {
         std::cout << this->name << " couldn't sign " << obj.getname() << " because " << ex.what() << std::endl;
     }
-    if (obj.getsign())
-        std::cout << this->name << " signed " << obj.getname() << std::endl;
 }
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {

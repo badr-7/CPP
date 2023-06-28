@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:53 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/24 13:24:27 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:29:44 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ public:
     Bureaucrat(Bureaucrat &);
     Bureaucrat(std::string, int);
     ~Bureaucrat();
-    std::string getName();
-    int getGrade();
+    std::string getName() const;
+    int getGrade() const;
     Bureaucrat &operator=(const Bureaucrat &other);
     void IncrementGrade();
     void decrementGrade();
@@ -38,4 +38,4 @@ public:
         const char *what() const throw();
     };
 };
-std::ostream &operator<<(std::ostream &out, Bureaucrat &Obj);
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &Obj);
