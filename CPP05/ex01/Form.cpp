@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:09:02 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 09:47:06 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:47:01 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ Form::Form() : name("default"), GradeToSign(150), GradeToExecute(150)
 }
 Form::Form(Form &other) : name(other.name), GradeToSign(other.GradeToSign), GradeToExecute(other.GradeToExecute)
 {
-    this->_signed = other._signed;
+    *this = other;
 }
-Form::Form(std::string Name, bool Sign, int gradetoexecute, int gradetosign) : name(Name), GradeToSign(gradetosign), GradeToExecute(gradetoexecute)
+Form::Form(std::string Name, int gradetoexecute, int gradetosign) : name(Name), GradeToSign(gradetosign), GradeToExecute(gradetoexecute)
 {
-    this->_signed = Sign;
+    this->_signed = false;
 }
 
 /////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
@@ -34,7 +34,7 @@ Form &Form::operator=(const Form &other)
     (void)other;
     return *this;
 }
-std::ostream &operator<<(std::ostream &out, Form &br)
+std::ostream &operator<<(std::ostream &out, const Form &br)
 {
     out << br.getname() << ",  sign " << br.getsign() << ", Sign Grade " << br.getGradetosign() << ", Execute Grade " << br.getGradetoexecute() << std::endl;
     return out;
@@ -42,19 +42,19 @@ std::ostream &operator<<(std::ostream &out, Form &br)
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 
-std::string Form::getname()
+std::string Form::getname() const
 {
     return this->name;
 }
-bool Form::getsign()
+bool Form::getsign() const
 {
     return this->_signed;
 }
-int Form::getGradetosign()
+int Form::getGradetosign() const
 {
     return this->GradeToSign;
 }
-int Form::getGradetoexecute()
+int Form::getGradetoexecute() const
 {
     return this->GradeToExecute;
 }

@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:08:54 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/25 09:46:58 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:45:26 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
 public:
     Form();
     Form(Form &);
-    Form(std::string, bool, int, int);
+    Form(std::string, int, int);
     ~Form();
     Form &operator=(const Form &other);
     class GradeTooHighException : public std::exception
@@ -36,11 +36,11 @@ public:
     {
         const char *what() const throw();
     };
-    std::string getname();
-    bool getsign();
-    int getGradetosign();
-    int getGradetoexecute();
+    std::string getname() const;
+    bool getsign() const;
+    int getGradetosign() const;
+    int getGradetoexecute() const;
     void beSigned(Bureaucrat &);
 };
 
-std::ostream &operator<<(std::ostream &out, Form &br);
+std::ostream &operator<<(std::ostream &out, const Form &br);

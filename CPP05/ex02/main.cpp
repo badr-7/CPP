@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:37 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 09:50:35 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:18:05 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,50 +18,64 @@
 
 int main()
 {
-	try
-    {
-        AForm *form = new ShrubberyCreationForm("ShrubberyCreationForm");
-        Bureaucrat bureaucrat("imad", 40);
-        form->beSigned(bureaucrat);
-        bureaucrat.signForm(*form);
-        bureaucrat.executeForm(*form);
-        delete form;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    
-	std::cout << std::endl;
-    
+	PresidentialPardonForm f1("staff");
+    RobotomyRequestForm f2("mac");
+    ShrubberyCreationForm f3("forest");
+    Bureaucrat badr("badr", 140);
     try
     {
-        AForm *form1 = new RobotomyRequestForm("RRobotomyrequest");
-        Bureaucrat bureaucrat1("abid", 45);
-        form1->beSigned(bureaucrat1);
-        bureaucrat1.signForm(*form1);
-        bureaucrat1.executeForm(*form1);
-        delete form1;
+        std::cout << badr;
+        std::cout << f3;
+        badr.signForm(f3);
+        f3.execute(badr);
+        std::cout << f2;
+        badr.signForm(f2);
+        f2.execute(badr);
+        std::cout << f1;
+        badr.signForm(f1);
+        f1.execute(badr);
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
-    
-	std::cout << std::endl;
-    
+    std::cout<< "//////////////////////////////////////////////////////////////"<<std::endl;
+    badr = Bureaucrat("", 70);
     try
     {
-        AForm *form2 = new PresidentialPardonForm("PresidentialPardon");
-        Bureaucrat bureaucrat2("imabid", 5);
-        form2->beSigned(bureaucrat2);
-        bureaucrat2.signForm(*form2);
-        bureaucrat2.executeForm(*form2);
-        delete form2;
+        std::cout << badr;
+        std::cout << f3;
+        badr.signForm(f3);
+        f3.execute(badr);
+        std::cout << f2;
+        badr.signForm(f2);
+        f2.execute(badr);
+        std::cout << f1;
+        badr.signForm(f1);
+        f1.execute(badr);
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
+    }
+    std::cout<< "//////////////////////////////////////////////////////////////"<<std::endl;
+    badr = Bureaucrat("", 1);
+    try
+    {
+        std::cout << badr;
+        std::cout << f3;
+        badr.signForm(f3);
+        f3.execute(badr);
+        std::cout << f2;
+        badr.signForm(f2);
+        f2.execute(badr);
+        std::cout << f1;
+        badr.signForm(f1);
+        f1.execute(badr);
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
     }
     
     return (0);

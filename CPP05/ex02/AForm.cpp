@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:24 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 09:36:02 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:24:28 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ AForm &AForm::operator=(const AForm &other)
     (void)other;
     return *this;
 }
-std::ostream &operator<<(std::ostream &out, AForm &br)
+std::ostream &operator<<(std::ostream &out, const AForm &br)
 {
     out << br.getname() << ",  sign " << br.getsign() << ", Sign Grade " << br.getGradetosign() << ", Execute Grade " << br.getGradetoexecute() << std::endl;
     return out;
@@ -75,6 +75,10 @@ const char *AForm::GradeTooHighException::what() const throw()
 const char *AForm::GradeTooLowException::what() const throw()
 {
     return ("Grade To Low");
+}
+const char *AForm::CanNotExecuteException::what() const throw()
+{
+    return ("Can't execute");
 }
 /////////////////////////////////////////////////////////////////////[DESTRUCTORS]
 

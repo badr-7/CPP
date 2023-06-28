@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:50 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/24 13:05:08 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:28:13 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int main()
     catch (std::exception &ex)
     {
         std::cout << ex.what() << std::endl;
+        std::cout << Bureaucrat("melhous",1);
     }
 }

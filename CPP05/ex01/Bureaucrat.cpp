@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 10:23:14 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 08:47:57 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:43:19 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
     this->grade = other.grade;
     return *this;
 }
-std::ostream &operator<<(std::ostream &out, Bureaucrat &Obj)
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &Obj)
 {
     out << Obj.getName() << ", bureaucrat grade " << Obj.getGrade() << std::endl;
     return out;
@@ -46,11 +46,11 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &Obj)
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return this->name;
 }
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->grade;
 }

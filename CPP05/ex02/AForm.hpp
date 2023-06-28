@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:28 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 09:51:48 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:24:25 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ public:
     {
         const char *what() const throw();
     };
+    class CanNotExecuteException : public std::exception
+    {
+        const char *what() const throw();
+    };
     std::string getname() const;
     bool getsign() const;
     int getGradetosign() const;
@@ -44,4 +48,4 @@ public:
     void beSigned(Bureaucrat &);
 };
 
-std::ostream &operator<<(std::ostream &out, AForm &br);
+std::ostream &operator<<(std::ostream &out, const AForm &br);
