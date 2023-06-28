@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 15:36:43 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 16:01:59 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:36:28 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ Intern::Intern(const Intern &other)
 AForm *Intern::makeForm(std::string name, std::string target)
 {
     int i = 0;
-    std::string names[3] = {"PresidentialPardon", "ShrubberyCreation", "RobotomyRequest"};
-    AForm *ptr;
+    std::string names[3] = {"Presidential Pardon", "Shrubbery Creation", "Robotomy Request"};
     for (i = 0; i < 3; i++)
         if (name.compare(names[i]) == 0)
             break;
@@ -40,16 +39,13 @@ AForm *Intern::makeForm(std::string name, std::string target)
     {
     case 0:
         std::cout << "Intern creates " << names[i] << std::endl;
-        ptr = new PresidentialPardonForm(target);
-        return (ptr);
+        return (new PresidentialPardonForm(target));
     case 1:
         std::cout << "Intern creates " << names[i] << std::endl;
-        ptr = new ShrubberyCreationForm(target);
-        return (ptr);
+        return (new ShrubberyCreationForm(target));
     case 2:
         std::cout << "Intern creates " << names[i] << std::endl;
-        ptr = new RobotomyRequestForm(target);
-        return (ptr);
+        return (new RobotomyRequestForm(target));
     default:
         std::cout << "No Form with this name!!" << std::endl;
     }
