@@ -6,20 +6,16 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/22 15:36:43 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/28 15:36:28 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:57:02 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
+/////////////////////////////////////////////////////////////////////[CONSTRUCTORS]
+
 Intern::Intern()
 {
-}
-
-Intern &Intern::operator=(const Intern &other)
-{
-    (void)other;
-    return *this;
 }
 
 Intern::Intern(const Intern &other)
@@ -27,6 +23,17 @@ Intern::Intern(const Intern &other)
     *this = other;
 }
 
+/////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
+
+Intern &Intern::operator=(const Intern &other)
+{
+    (void)other;
+    return *this;
+}
+
+/////////////////////////////////////////////////////////////////////[GETTERS]
+
+/////////////////////////////////////////////////////////////////////[FUNCTIONS]
 
 AForm *Intern::makeForm(std::string name, std::string target)
 {
@@ -51,6 +58,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
     }
     return 0;
 }
+/////////////////////////////////////////////////////////////////////[DESTRUCTORS]
 
 Intern::~Intern()
 {
