@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:32 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/26 17:43:14 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:58:37 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
 
 void	Bureaucrat::executeForm(AForm const &form)
 {
-    if(form.getsign())
-    {
+    if(form.getsign() && form.getGradetoexecute() >= this->getGrade())
+    {   
         form.execute(*this);
         std::cout << this->getName() << " executed " << form.getname() << std::endl;
     }

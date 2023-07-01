@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 10:29:37 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/06/27 14:43:31 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:55:04 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,69 +19,83 @@
 
 int main()
 {
+    Intern someRandomIntern;
+    AForm* rrf[3];
+    rrf[0] = someRandomIntern.makeForm("Presidential Pardon", "staff");
+    if(!rrf[0])
+        return 0;
+    rrf[1] = someRandomIntern.makeForm("Robotomy Request", "mac");
+    if(!rrf[1])
+    {
+        delete rrf[0];
+        return 0;
+    }
+    rrf[2] = someRandomIntern.makeForm("Shrubbery Creation", "forest");
+    if(!rrf[2])
+    {
+        delete rrf[0];
+        delete rrf[1];
+        return 0;
+    }
+
+    Bureaucrat badr("badr", 140);
     try
     {
-        Bureaucrat imad("imad", 100);
-
-        Intern form;
-        AForm *Azol = form.makeForm("shrubbery creation", "Azol");
-        std::cout << Azol->getname() << std::endl;
-        Azol->beSigned(imad);
-        imad.signForm(*Azol);
-        imad.executeForm(*Azol);
-        delete Azol;
+        std::cout << badr;
+        std::cout << *rrf[2];
+        badr.signForm(*rrf[2]);
+        rrf[2]->execute(badr);
+        std::cout << *rrf[1];
+        badr.signForm(*rrf[1]);
+        rrf[1]->execute(badr);
+        std::cout << *rrf[0];
+        badr.signForm(*rrf[0]);
+        rrf[0]->execute(badr);
     }
-    catch (std::exception &e)
+    catch(const std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
+    std::cout<< "//////////////////////////////////////////////////////////////"<<std::endl;
+    badr = Bureaucrat("", 70);
     try
     {
-        Bureaucrat abid("abid", 40);
-
-        Intern form;
-        AForm *Ayour = form.makeForm("robotomy request", "Ayour");
-        std::cout << Ayour->getname() << std::endl;
-        Ayour->beSigned(abid);
-        abid.signForm(*Ayour);
-        abid.executeForm(*Ayour);
-        delete Ayour;
+        std::cout << badr;
+        std::cout << *rrf[2];
+        badr.signForm(*rrf[2]);
+        rrf[2]->execute(badr);
+        std::cout << *rrf[1];
+        badr.signForm(*rrf[1]);
+        rrf[1]->execute(badr);
+        std::cout << *rrf[0];
+        badr.signForm(*rrf[0]);
+        rrf[0]->execute(badr);
     }
-    catch (std::exception &e)
+    catch(const std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
+    std::cout<< "//////////////////////////////////////////////////////////////"<<std::endl;
+    badr = Bureaucrat("", 1);
     try
     {
-        Bureaucrat imabid("imabid", 3);
-
-        Intern form;
-        AForm *Tafokt = form.makeForm("presidential pardon", "Tafokt");
-        std::cout << Tafokt->getname() << std::endl;
-        Tafokt->beSigned(imabid);
-        imabid.signForm(*Tafokt);
-        imabid.executeForm(*Tafokt);
-        delete Tafokt;
+        std::cout << badr;
+        std::cout << *rrf[2];
+        badr.signForm(*rrf[2]);
+        rrf[2]->execute(badr);
+        std::cout << *rrf[1];
+        badr.signForm(*rrf[1]);
+        rrf[1]->execute(badr);
+        std::cout << *rrf[0];
+        badr.signForm(*rrf[0]);
+        rrf[0]->execute(badr);
     }
-    catch (std::exception &e)
+    catch(const std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
-    try
-    {
-        Bureaucrat hello("hello", 3);
-
-        Intern form;
-        AForm *titrit = form.makeForm("Wrong form", "Titirit");
-        std::cout << titrit->getname() << std::endl;
-        titrit->beSigned(hello);
-        hello.signForm(*titrit);
-        hello.executeForm(*titrit);
-        delete titrit;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-    return 0;
+    for(int i=0; i < 3 ; i++)
+        delete rrf[i];
+    
+    return (0);
 }

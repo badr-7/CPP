@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/23 10:29:54 by mel-hous          #+#    #+#              #
-#    Updated: 2023/06/28 15:33:57 by mel-hous         ###   ########.fr        #
+#    Created: 2023/06/29 11:30:46 by mel-hous          #+#    #+#              #
+#    Updated: 2023/06/29 11:32:01 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = Bureaucrat
+EXEC = ScalarConvert
 
 RM = rm -rf
 
@@ -18,12 +18,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
-SRC =	Bureaucrat.cpp\
-		AForm.cpp\
-		PresidentialPardonForm.cpp\
-		RobotomyRequestForm.cpp\
-		ShrubberyCreationForm.cpp\
-		Intern.cpp\
+SRC =	ScalarConverter.cpp\
 		main.cpp\
 		
 
