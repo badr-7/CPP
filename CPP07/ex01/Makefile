@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/29 11:30:46 by mel-hous          #+#    #+#              #
-#    Updated: 2023/07/04 11:00:21 by mel-hous         ###   ########.fr        #
+#    Created: 2023/07/03 17:06:41 by mel-hous          #+#    #+#              #
+#    Updated: 2023/07/03 17:07:02 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = ScalarConvert
+EXEC = iter
 
 RM = rm -rf
 
@@ -18,9 +18,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
-SRC =	ScalarConverter.cpp\
-		main.cpp\
-		
+SRC =	main.cpp
 
 OBJS = ${SRC:.cpp=.o}
 

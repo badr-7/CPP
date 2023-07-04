@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:30:43 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/01 12:42:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:52:24 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,9 @@
 
 class ScalarConverter
 {
-public:
     ScalarConverter();
-    ScalarConverter(ScalarConverter &);
-    ScalarConverter& operator=(const ScalarConverter&);
+public:
+    static void build();
     static void convert(std::string &);
     ~ScalarConverter();
-    // char character;
-    // int  
-    // float
-    // double
 };

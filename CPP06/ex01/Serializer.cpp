@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/01 17:11:24 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/02 15:36:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:51:33 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,11 @@
 
 Serializer::Serializer(){
 }
-Serializer::Serializer(Serializer& other){
-    *this = other;
+void Serializer::build(){
+    Serializer();
 }
 
 /////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
-
-Serializer& Serializer::operator=(const Serializer& other){
-    (void)other;
-    return *this;
-}
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 

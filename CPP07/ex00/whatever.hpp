@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 10:40:06 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/04 10:01:35 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/07/03 16:14:59 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/07/03 16:23:42 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 
-int main() {
-    float intValue = 10.01;
-    int charValue = static_cast<int>(intValue);
 
-    std::cout << "Int Value: " << intValue << std::endl;
-    std::cout << "Char Value: " << charValue << std::endl;
-
-    return 0;
+template <typename T>
+void swap(T &a, T &b)
+{
+    T i;
+    i = a;
+    a = b;
+    b = i;
+}
+template <typename T>
+T max(T &a, T &b)
+{
+    if(a > b)
+        return a;
+    else
+        return b;
+}
+template <typename T>
+T min(T &a, T &b)
+{
+    if(a < b)
+        return a;
+    else
+        return b;
 }

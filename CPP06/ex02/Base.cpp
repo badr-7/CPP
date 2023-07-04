@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 08:31:39 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/02 09:00:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/04 08:31:14 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void identify(Base& p) {
         std::cout << "A" << std::endl;
         (void)a;
         return;
-    } catch (const std::bad_cast&) {
+    } catch (std::bad_cast&) {
     }
 
     try {
@@ -55,7 +55,7 @@ void identify(Base& p) {
         std::cout << "B" << std::endl;
         (void)b;
         return;
-    } catch (const std::bad_cast&) {
+    } catch (std::bad_cast&) {
     }
 
     try {
@@ -63,7 +63,7 @@ void identify(Base& p) {
         std::cout << "C" << std::endl;
         (void)c;
         return;
-    } catch (const std::bad_cast&) {
+    } catch (std::bad_cast&) {
     }
 }
 

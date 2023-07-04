@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:30:40 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/03 08:30:56 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:54:22 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,12 @@
 ScalarConverter::ScalarConverter()
 {
 }
-ScalarConverter::ScalarConverter(ScalarConverter &other)
+void ScalarConverter::build()
 {
-    *this = other;
+   ScalarConverter();
 }
 
 /////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
-
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other)
-{
-    (void)other;
-    return *this;
-}
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
 

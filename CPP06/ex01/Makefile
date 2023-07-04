@@ -6,7 +6,7 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/01 17:11:22 by mel-hous          #+#    #+#              #
-#    Updated: 2023/07/02 15:35:29 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/07/04 11:00:13 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean :
 		${RM} ${OBJS} ${DEP}
 
 fclean : clean
-		${RM} ${EXEC} *_shrubbery
+		${RM} ${EXEC}
 
 re : fclean all
 
