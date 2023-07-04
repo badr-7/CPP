@@ -5,19 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 10:40:06 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/04 10:01:35 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/07/02 15:34:20 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/07/04 08:19:33 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Serializer.hpp"
 
 int main() {
-    float intValue = 10.01;
-    int charValue = static_cast<int>(intValue);
+    Data dataObj;
+    dataObj.i = 42;
+    dataObj.c = 'b';
 
-    std::cout << "Int Value: " << intValue << std::endl;
-    std::cout << "Char Value: " << charValue << std::endl;
+    uintptr_t serialized = Serializer::serialize(&dataObj);
+
+    Data* deserialized = Serializer::deserialize(serialized);
+
+    if (deserialized == &dataObj) {
+        std::cout << "Serialization and deserialization successful." << std::endl;
+    } else {
+        std::cout << "Serialization or deserialization failed." << std::endl;
+    }
 
     return 0;
 }

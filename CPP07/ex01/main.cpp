@@ -5,19 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 10:40:06 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/04 10:01:35 by mel-hous         ###   ########.fr       */
+/*   Created: 2023/07/03 17:06:22 by mel-hous          #+#    #+#             */
+/*   Updated: 2023/07/04 07:27:28 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "iter.hpp"
 
-int main() {
-    float intValue = 10.01;
-    int charValue = static_cast<int>(intValue);
+template< typename T > 
+void print( T & x ) 
+{
+    if (toupper(x) >= 32 && toupper(x) <= 126)
+        std::cout << (char)toupper(x) << " ";
+    else
+        std::cout << x << " ";
+}
 
-    std::cout << "Int Value: " << intValue << std::endl;
-    std::cout << "Char Value: " << charValue << std::endl;
+int main()
+{
+    int i[] = {1,3,3,7};
+    char str[] = "mel-hous";
+    
+    iter(i, 4, print);
+    std::cout << std::endl;
+    iter(str, 8, print);
 
     return 0;
 }
