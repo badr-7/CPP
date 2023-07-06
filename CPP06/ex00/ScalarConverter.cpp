@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 11:30:40 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/04 10:54:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:21:00 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@
 ScalarConverter::ScalarConverter()
 {
 }
-void ScalarConverter::build()
+ScalarConverter ScalarConverter::build()
 {
-   ScalarConverter();
+    return ScalarConverter();
 }
-
 /////////////////////////////////////////////////////////////////////[OVERLOAD_OP]
 
 /////////////////////////////////////////////////////////////////////[GETTERS]
@@ -62,8 +61,8 @@ bool float_check(std::string &literal)
     int f = 0;
     int DecimalPoint = 0;
     int Decimal = 0;
-    if(literal.compare(i,4,"nanf") == 0 || literal.compare(i,5,"-inff") == 0 || literal.compare(i,5,"+inff") == 0)
-        return(true);
+    if (literal.compare(i, 4, "nanf") == 0 || literal.compare(i, 5, "-inff") == 0 || literal.compare(i, 5, "+inff") == 0)
+        return (true);
     if (strchr("+-", literal[0]))
     {
         i++;
@@ -93,8 +92,8 @@ bool double_check(std::string &literal)
     int i = 0;
     int DecimalPoint = 0;
     int Decimal = 0;
-    if(literal.compare(i,4,"nan") == 0 || literal.compare(i,4,"-inf") == 0 || literal.compare(i,4,"+inf") == 0)
-        return(true);
+    if (literal.compare(i, 4, "nan") == 0 || literal.compare(i, 4, "-inf") == 0 || literal.compare(i, 4, "+inf") == 0)
+        return (true);
     if (strchr("+-", literal[0]))
     {
         i++;
@@ -114,7 +113,7 @@ bool double_check(std::string &literal)
         else
             return (false);
     }
-    return ( DecimalPoint == 1);
+    return (DecimalPoint == 1);
 }
 
 double extract_number(std::string &s)
@@ -131,68 +130,69 @@ void ScalarConverter::convert(std::string &literal)
     {
         char c = literal[0];
         if (c < 0 || c > 127)
-		    std::cout << "impossible" << std::endl;
-	    else if (c < 32 || c == 127)
-		    std::cout << "Non displayable" << std::endl;
+            std::cout << "impossible" << std::endl;
+        else if (c < 32 || c == 127)
+            std::cout << "Non displayable" << std::endl;
         else
             std::cout << "char: '" << c << "'" << std::endl;
-	    std::cout << "int: " << static_cast<int>(c) << std::endl;
-	    std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
-	    std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+        std::cout << "int: " << static_cast<int>(c) << std::endl;
+        std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+        std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
     }
-    else if(int_check(literal))
+    else if (int_check(literal))
     {
         int i = extract_number(literal);
         if (i < 0 || i > 127)
-		    std::cout << "char: impossible" << std::endl;
-	    else if (i < 32 || i == 127)
-		    std::cout << "char: Non displayable" << std::endl;
+            std::cout << "char: impossible" << std::endl;
+        else if (i < 32 || i == 127)
+            std::cout << "char: Non displayable" << std::endl;
         else
-            std::cout << "char: '"  << static_cast<char>(i) << "'" << std::endl;
-	    std::cout << "int: " << i << std::endl;
-	    std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
-	    std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
+            std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+        std::cout << "int: " << i << std::endl;
+        std::cout << "float: " << static_cast<float>(i) << ".0f" << std::endl;
+        std::cout << "double: " << static_cast<double>(i) << ".0" << std::endl;
     }
-    else if(double_check(literal))
+    else if (double_check(literal))
     {
         double i = stod(literal);
         std::cout << std::fixed << std::setprecision(1);
         if (i < 0 || i > 127 || std::isnan(i))
-		    std::cout << "char: impossible" << std::endl;
-	    else if (i < 32 || i == 127)
-		    std::cout << "char: Non displayable" << std::endl;
+            std::cout << "char: impossible" << std::endl;
+        else if (i < 32 || i == 127)
+            std::cout << "char: Non displayable" << std::endl;
         else
-            std::cout << "char: '"  << static_cast<char>(i) << "'" << std::endl;
-        if(std::isnan(i))
+            std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+        if (std::isnan(i))
             std::cout << "int: impossible" << std::endl;
         else if (std::isinf(i) && i > 0)
             std::cout << "int: 2147483647" << std::endl;
         else
-    	    std::cout << "int: " << static_cast<int>(i) << std::endl;
-	    std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
-	    std::cout << "double: " << i << std::endl;
+            std::cout << "int: " << static_cast<int>(i) << std::endl;
+        std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
+        std::cout << "double: " << i << std::endl;
     }
-    else if(float_check(literal))
+    else if (float_check(literal))
     {
         float i = stof(literal);
         std::cout << std::fixed << std::setprecision(1);
         if (i < 0 || i > 127 || std::isnan(i))
-		    std::cout << "char: impossible" << std::endl;
-	    else if (i < 32 || i == 127)
-		    std::cout << "char: Non displayable" << std::endl;
+            std::cout << "char: impossible" << std::endl;
+        else if (i < 32 || i == 127)
+            std::cout << "char: Non displayable" << std::endl;
         else
-            std::cout << "char: '"  << static_cast<char>(i) << "'" << std::endl;
-        if(std::isnan(i))
+            std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+        if (std::isnan(i))
             std::cout << "int: impossible" << std::endl;
         else if (std::isinf(i) && i > 0)
             std::cout << "int: 2147483647" << std::endl;
         else
-    	    std::cout << "int: " << static_cast<int>(i) << std::endl;
-	    std::cout << "float: " << i << "f" << std::endl;
-	    std::cout << "double: " << static_cast<double>(i) << std::endl;
+            std::cout << "int: " << static_cast<int>(i) << std::endl;
+        std::cout << "float: " << i << "f" << std::endl;
+        std::cout << "double: " << static_cast<double>(i) << std::endl;
     }
-    else {
-        std::cout<<"YOU MUST ENTER ONE OF THIS SCALAR TYPES: \n-char\n -int\n -float\n -double"<<std::endl;
+    else
+    {
+        std::cout << "YOU MUST ENTER ONE OF THIS SCALAR TYPES: \n-char\n -int\n -float\n -double" << std::endl;
     }
 }
 

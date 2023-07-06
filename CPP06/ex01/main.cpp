@@ -6,24 +6,28 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 15:34:20 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/04 08:19:33 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/06 13:20:49 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-int main() {
+int main()
+{
     Data dataObj;
     dataObj.i = 42;
     dataObj.c = 'b';
 
     uintptr_t serialized = Serializer::serialize(&dataObj);
 
-    Data* deserialized = Serializer::deserialize(serialized);
+    Data *deserialized = Serializer::deserialize(serialized);
 
-    if (deserialized == &dataObj) {
+    if (deserialized == &dataObj)
+    {
         std::cout << "Serialization and deserialization successful." << std::endl;
-    } else {
+    }
+    else
+    {
         std::cout << "Serialization or deserialization failed." << std::endl;
     }
 
