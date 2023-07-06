@@ -6,11 +6,11 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/02 08:31:47 by mel-hous          #+#    #+#              #
-#    Updated: 2023/07/04 11:00:07 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/07/03 14:42:13 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = Serializer
+EXEC =  Identify
 
 RM = rm -rf
 
