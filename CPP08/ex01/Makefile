@@ -6,11 +6,11 @@
 #    By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/08 15:02:46 by mel-hous          #+#    #+#              #
-#    Updated: 2023/07/08 15:05:58 by mel-hous         ###   ########.fr        #
+#    Updated: 2023/07/09 14:02:11 by mel-hous         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-EXEC = Array
+EXEC = Span
 
 RM = rm -rf
 
@@ -18,7 +18,8 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
-SRC =	main.cpp
+SRC =	main.cpp\
+		Span.cpp\
 
 OBJS = ${SRC:.cpp=.o}
 
