@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:33:23 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/07 10:26:30 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/08 10:26:04 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(int, char**)
     Array<char> str(12);
     char *s = strdup("hello world");
     Array<int> tab(12);
-    for (int i = 0; i < 12; i++)
+    for (int i = 0; i < 12; i++) 
     {
         str[i] = s[i];
         tab[i] = i;
