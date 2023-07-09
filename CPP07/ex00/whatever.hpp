@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 16:14:59 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/07 09:56:28 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/08 11:59:03 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,12 @@ T max(T &a, T &b)
 {
     if(a > b)
         return a;
-    else
-        return b;
+    return b;
 }
 template <typename T>
 T min(T &a, T &b)
 {
     if(a < b)
         return a;
-    else
-        return b;
+    return b;
 }

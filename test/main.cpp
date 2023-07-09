@@ -51,3 +51,6 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
+
+// hello!
+// How about logtime had chehar wach ghayb9a howa howa bach ndiro 7sabna
