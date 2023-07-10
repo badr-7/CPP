@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 15:02:48 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/09 14:32:17 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/07/10 08:50:15 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ bool cmp(int a, int b) {
 }
 
 void Span::addNumber(unsigned int i){
-    numbers.push_back(i);
+    if(this->numbers.size() < this->size)
+        numbers.push_back(i);
 }
 unsigned int Span::shortestSpan(){
     int smallest = -1;
