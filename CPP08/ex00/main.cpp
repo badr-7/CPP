@@ -6,13 +6,14 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:58:04 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/09 09:05:16 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:22:41 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
 #include <algorithm>
 #include <vector>
+#include <deque>
 
 int main()
 {
@@ -31,9 +32,13 @@ int main()
         std::cout << e.what() << std::endl;
     }
 
+    std::deque<int> d;
+    d.push_front(13);
+    d.push_front(7);
+    d.push_front(9);
     try
     {
-        easyfind(numbers, 6);
+        easyfind(d, 7);
     }
     catch (const std::exception &e)
     {
