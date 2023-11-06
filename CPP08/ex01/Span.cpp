@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/08 15:02:48 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/07/10 08:50:15 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:27:25 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ unsigned int Span::longestSpan(){
     }
     return(*std::max_element(numbers.begin(), numbers.end()) - *std::min_element(numbers.begin(), numbers.end()));
 }
+
+
 
 /////////////////////////////////////////////////////////////////////[DESTRUCTORS]
 
