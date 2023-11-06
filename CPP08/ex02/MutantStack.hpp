@@ -6,19 +6,15 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 14:35:56 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/05 11:15:51 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:02:20 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
-#include <stack>
-
 #include <algorithm>
 #include <stack>
 #include <deque>
 #include <iostream>
-#include <vector>
 
 
 template<typename T>
