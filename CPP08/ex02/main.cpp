@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 14:35:50 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/06 16:07:39 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/11 11:17:09 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ std::cout << *it << std::endl;
 ++it;
 }
 MutantStack<int> s(mstack);
-MutantStack<int>::iterator itt = s.begin();
-while (itt != s.end())
+MutantStack<int>::reverse_iterator itt = s.rbegin();
+while (itt != s.rend())
 {
 std::cout << *itt << std::endl;
 ++itt;
