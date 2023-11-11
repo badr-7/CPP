@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/09 14:35:56 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/06 16:02:20 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/11 10:00:50 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class MutantStack : public std::stack<T>
 	    return (*this);
     };
     typedef typename std::stack<T>::container_type::iterator iterator;
-    typedef typename std::stack<T>::container_type::const_iterator const_ititerator;
+    typedef typename std::stack<T>::container_type::const_iterator const_iterator;
     typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
     typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
@@ -45,10 +45,10 @@ class MutantStack : public std::stack<T>
     iterator end(){
         return this->c.end();
     };
-    const_ititerator cbegin(){
+    const_iterator cbegin(){
         return this->c.cbegin();
     };
-    const_ititerator cend(){
+    const_iterator cend(){
         return this->c.cend();
     };
     reverse_iterator rbegin(){
