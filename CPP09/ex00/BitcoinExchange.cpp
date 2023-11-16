@@ -6,16 +6,11 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:07:26 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/16 09:59:58 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/16 10:18:47 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <algorithm>
-
 
 bool check_line(std::string s){
     if(std::count(s.begin(), s.end(), ',') > 1 || std::count(s.begin(), s.end(), '-') > 3
@@ -39,20 +34,24 @@ void removeWhitespace(std::string& line){
     line = line.substr(begin, line.size() - (end + begin));
 }
 
-void CheckWhitespace(std::string line){
+bool CheckWhitespace(std::string line){
     removeWhitespace(line);
     for(std::string::iterator it = line.begin(); it != line.end(); it++)
     {
         if((*it == ' ' || *it == '\t'))
-            throw std::runtime_error("invalide date");
+            return false;
     }
+    return true;
 }
 
 bool check_date(std::string s){
     date dt;
     char sp;
     int feb = 28;
-    CheckWhitespace(s);
+    if (!CheckWhitespace(s)){
+        std::cout <<"Error: invalide date => "<<s<<std::endl;
+        return (false);
+    }
     std::istringstream str(s);
     str >> dt.year >> sp >> dt.month >> sp >> dt.day;
     if (dt.year < 1 || dt.year > 9999) {
@@ -144,10 +143,13 @@ void execute(std::map<std::string,float> db, std::string date,float value){
             --it;
             std::cout<< date <<" => "<<value<<" = "<< it->second * value << std::endl;
         }
+        else{
+            std::cout<<"Value Not Found For This Date => "<< date <<std::endl;
+        }
     }
 
 }
-std::map<std::string,float> parse(std::ifstream &myfile, std::map<std::string,float> db)
+void process(std::ifstream &myfile, std::map<std::string,float> db)
 {
     std::map<std::string,float> data;
     std::string line;
@@ -175,5 +177,4 @@ std::map<std::string,float> parse(std::ifstream &myfile, std::map<std::string,fl
            std::cout <<"Error: bad input => "<<line<<std::endl;
         }
     }
-    return(data);
 }
