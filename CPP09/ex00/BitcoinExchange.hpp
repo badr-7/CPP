@@ -6,19 +6,17 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:58:42 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/16 09:45:14 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/16 10:18:54 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 #include <map>
-
-#define MaxDay 31
-#define MinDay 0
-#define MaxMounth 12
-#define MinMounth 0
-#define MaxYear 2023
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
 
 struct date{
     int year;
@@ -27,4 +25,11 @@ struct date{
 };
 
 std::map<std::string,float> storedata();
-std::map<std::string,float> parse(std::ifstream &myfile, std::map<std::string,float> db);
+void process(std::ifstream &myfile, std::map<std::string,float> db);
+void execute(std::map<std::string,float> db, std::string date,float value);
+bool checkValue(std::string value);
+std::map<std::string,float> storedata();
+bool check_date(std::string s);
+bool CheckWhitespace(std::string line);
+void removeWhitespace(std::string& line);
+bool check_line(std::string s);
