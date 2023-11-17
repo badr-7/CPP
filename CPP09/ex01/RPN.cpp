@@ -1,26 +1,44 @@
 #include "RPN.hpp"
 
-void check_syn(std::string s){
-    int a = -1;
-    int b;
-    char c;
-    char space;
-    std::istringstream ss(s);
-    ss >> a;
-    if (a == -1)
-        throw std::runtime_error("invalide form.");
-    for (std::string::iterator it = s.begin(); it != s.end(); it++)
-    {
-        // if (++it == s.end())
-        //     break;
-        ss >> b >> c;
-        std::cout<<"space :"<<space<<"  b : "<<b<<"  c : "<<c<<std::endl;
-        if (ss.fail())
-            throw std::runtime_error("FAIL");
-        // if (space != ' ')
-        //     throw std::runtime_error("aaaa");
-        
-    }
-    
+bool check_line(std::string line){
+    int size = line.size() - 1;
 
+    while (size >= 0)
+    {
+        if(line[size] == '-' ||line[size] == '+'||line[size] == '*'||line[size] == '/')
+        {
+            if ((unsigned long)(size + 1) < line.size() && line[size+1] != ' '){
+               return false;
+            }
+            else
+                size--;
+        }
+        else if(line[size] >= '0' && line[size] <= '9'){
+           if ((unsigned long)(size + 1) < line.size() && line[size+1] != ' ')
+               return false;
+            else
+                size--;
+        }
+        else if(line[size] == ' ' || line[size] == '\t')
+            size--;
+        else
+           return false;
+    }
+    return true;
+}
+
+std::stack<char> store_data(std::string s){
+   int pose = s.size() - 1;
+    std::stack<char> stack;
+
+   while (pose >= 0) {
+        while (pose >= 0 && (s[pose] == ' ' || s[pose] == '\t')) {
+            pose--;
+        }
+        if (pose >= 0) {
+            stack.push(s[pose]);
+        }
+        pose--;
+    }
+    return stack;
 }
