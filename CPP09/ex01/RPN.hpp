@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 10:24:52 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/16 10:30:48 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/18 16:47:41 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,9 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <stack>
+#include <cstring>
 
-void check_syn(std::string);
+bool check_line(std::string line);
+std::stack<int> store_data(std::string &s);
+void action(std::stack<int>& db, char op);
