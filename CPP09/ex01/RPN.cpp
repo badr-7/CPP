@@ -34,45 +34,14 @@ std::stack<int> store_data(std::string &s){
         while (i >= 0 && (s[i] == ' ' || s[i] == '\t')) {
             i++;
         }
-        if (i >= 0 && (s[i] >= '0' && s[i] <= '9')) {
+        if (i >= 0 && (s[i] >= '0' && s[i] <= '9'))
             stack.push(s[i] - '0');
-            // s.erase(i, 1);
-        }
-        else if(s[i] == '-' ||s[i] == '+'||s[i] == '*'||s[i] == '/'){
+        else if(s[i] == '-' ||s[i] == '+'||s[i] == '*'||s[i] == '/')
             action(stack, s[i]);
-        }
         i++;
     }
     return stack;
 }
-// void add(std::stack<int>& db){
-//     int a = db.top();
-//     db.pop();
-//     int b = db.top();
-//     db.pop();
-//     db.push(a + b);
-// }
-// void div(std::stack<int>& db){
-//     int a = db.top();
-//     db.pop();
-//     int b = db.top();
-//     db.pop();
-//     db.push(a / b);
-// }
-// void mul(std::stack<int>& db){
-//     int a = db.top();
-//     db.pop();
-//     int b = db.top();
-//     db.pop();
-//     db.push(a * b);
-// }
-// void min(std::stack<int>& db){
-//     int a = db.top();
-//     db.pop();
-//     int b = db.top();
-//     db.pop();
-//     db.push(a - b);
-// }
 
 void action(std::stack<int>& db, char op){
     if(db.size() < 2)
@@ -87,6 +56,9 @@ void action(std::stack<int>& db, char op){
         db.push(b + a);
     if(op == '*')
         db.push(b * a);
-    if(op == '/')
+    if(op == '/'){
+        if (a == 0)
+            throw std::runtime_error("Erorr");
         db.push(b / a);
+    }
 }
