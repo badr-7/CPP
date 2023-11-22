@@ -22,7 +22,7 @@ int main(){
     numbers.push_back(20);
 
     
-    numbers = sort(numbers, 0, numbers.size());
+    numbers = sort(numbers);
     for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); ++it) {
         std::cout << *it << " \n";
     }

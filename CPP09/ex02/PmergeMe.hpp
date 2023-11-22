@@ -16,6 +16,6 @@
 #include <list>
 #include <vector>
 
-void insertionSort(std::vector<int> &vec, int begin, int end);
-std::vector<int> merge(std::vector<int> vec1,std::vector<int> vec2, int size1, int size2);
-std::vector<int> sort(std::vector<int> vec,int begin, int size);
+void insertionSort(std::vector<int> &vec);
+std::vector<int> merge(std::vector<int> vec1,std::vector<int> vec2);
+std::vector<int> sort(std::vector<int> vec);
