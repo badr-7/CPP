@@ -1,4 +1,4 @@
-EXEC = SORT
+EXEC = PmergeMe
 
 RM = rm -rf
 
@@ -7,6 +7,7 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -MMD -std=c++98
 
 SRC =	main.cpp\
+		PmergeMe.cpp\
 
 OBJS = ${SRC:.cpp=.o}
 
