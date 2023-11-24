@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:53:38 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/23 17:27:37 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 02:58:52 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ T StoreData(std::string s){
             int tmp;
             ss >> tmp;
             vec.push_back(tmp);
-            while (s[i]!= ' ')
+            while (std::isdigit(s[i]))
                 i++;
             
         }
-        else if(s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+        else if(s[i] == ' ' || s[i] == '\t')
             continue;
         else
             throw std::runtime_error("Error");
