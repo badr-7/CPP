@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:07:26 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/16 10:18:47 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 02:11:32 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,24 @@ void execute(std::map<std::string,float> db, std::string date,float value){
     }
 
 }
+void AdjDateShape(std::string &s){
+    int pos = s.find('-',s.find('-') + 1);
+    std::string day = s.substr(pos + 1);
+    if (day.size() == 1)
+    {
+        day = "0" + day;
+        s.erase(pos + 1);
+        s = s + day;
+    }
+    int pos2 = s.find('-');
+    std::string month = s.substr(pos2 + 1, (s.find('-',s.find('-') + 1) - pos2) - 1);
+    if (month.size() == 1)
+    {
+        month = "0" + month;
+        s.erase(pos2 + 1);
+        s = s + month +"-" + day;
+    }
+}
 void process(std::ifstream &myfile, std::map<std::string,float> db)
 {
     std::map<std::string,float> data;
@@ -165,9 +183,14 @@ void process(std::ifstream &myfile, std::map<std::string,float> db)
             if(!check_date(date))
                 continue;
             removeWhitespace(date);
+            AdjDateShape(date);
             value_string = line.substr(pose + 1);
             removeWhitespace(value_string);
-            if (!checkValue(value_string) || value_string.find(' ') != std::string::npos || value_string.find(' ') != std::string::npos)
+            if (!std::isdigit(value_string[0])){
+                std::cout <<"Error: bad input => "<<line<<std::endl;
+                continue;
+            }
+            if (!checkValue(value_string) || value_string.find(' ') != std::string::npos || value_string.find('\t') != std::string::npos)
                 continue;
             std::istringstream(value_string) >> value;
             execute(db,date,value);
