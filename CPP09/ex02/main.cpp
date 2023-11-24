@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:23:59 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/23 17:24:49 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 03:21:43 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ try
 	 clock_t end_time = clock();
 	 double elapsed_time = static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC;
 
-    std::cout << "Elapsed time: " << elapsed_time << " seconds" << std::endl;
+    std::cout << "Elapsed time: " << elapsed_time * 1e6  << " us" << std::endl;
 	 start_time = clock();
 	deq = sort(deq);
 	  end_time = clock();
 	  elapsed_time = static_cast<double>(end_time - start_time) / CLOCKS_PER_SEC;
 
-    std::cout << "Elapsed time: " << elapsed_time << " seconds" << std::endl;
+    std::cout << "Elapsed time: " << elapsed_time * 1e6 << " us" << std::endl;
 
 	
 }
