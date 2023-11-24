@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:53:38 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/24 02:58:52 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 20:59:22 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,8 @@ T StoreData(std::string s){
 
     for (int i = 0; i < size; i++)
     {
-        if((s[i] >= '0' && s[i] <= '9') || s[i] == '+' || s[i] == '-')
+        if(s[i] >= '0' && s[i] <= '9')
         {
-            if(s[i] == '+' || s[i] == '-')
-                if(!std::isdigit(s[i + 1]))
-                    throw std::runtime_error("Error");
             std::istringstream ss(&s[i]);
             int tmp;
             ss >> tmp;
@@ -96,3 +93,5 @@ T StoreData(std::string s){
     }
     return vec;
 }
+
+void take_input(std::string &s,char **input);
