@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:07:26 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/24 02:23:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 20:29:25 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,7 +192,6 @@ void process(std::ifstream &myfile, std::map<std::string,float> db)
             }
             if (!checkValue(value_string) || value_string.find(' ') != std::string::npos || value_string.find('\t') != std::string::npos)
                 continue;
-            std::cout<<"value =========== "<<value_string<<std::endl;
             std::istringstream(value_string) >> value;
             execute(db,date,value);
             data[date] = value;
