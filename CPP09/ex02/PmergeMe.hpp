@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:53:38 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/24 20:59:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/25 00:42:04 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 template <class T>
 void insertionSort(T &vec){
-    size_t i = 1;
+    int i = 1;
     while (i < vec.size())
     {
         int tmp = vec[i];
@@ -32,7 +32,6 @@ void insertionSort(T &vec){
         vec[j+1] = tmp;
         i++;
     }
-
 }
 
 template <class T>

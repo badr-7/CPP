@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:07:26 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/24 20:29:25 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:24:43 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ std::map<std::string,float> storedata()
 {
     std::ifstream myfile; 
     myfile.open("./data.csv");
+    if (!myfile.is_open())
+        throw std::runtime_error("Error: can't open \"data.csv\"");
     std::map<std::string,float> data;
     std::string line;
     std::string date;
@@ -190,7 +192,7 @@ void process(std::ifstream &myfile, std::map<std::string,float> db)
                 std::cout <<"Error: bad input => "<<line<<std::endl;
                 continue;
             }
-            if (!checkValue(value_string) || value_string.find(' ') != std::string::npos || value_string.find('\t') != std::string::npos)
+            if (!checkValue(value_string))
                 continue;
             std::istringstream(value_string) >> value;
             execute(db,date,value);

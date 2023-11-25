@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:23:59 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/24 20:54:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/25 00:34:16 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,29 @@ int main(int ac, char **av){
 	take_input(s,av);
 	std::vector<int> vec;
 	std::deque<int> deq;
+	int i;
 try
 {
 	vec = StoreData<std::vector<int> >(s);
 	deq = StoreData<std::deque<int> >(s);
 	std::cout<<"Before: "<<s<<std::endl;
-	clock_t start = clock();
+	clock_t c1 = clock();
 	vec = sort(vec);
-	 clock_t end = clock();
-	 double elapsed_time = (double)(end - start) / CLOCKS_PER_SEC;
+	 clock_t c2 = clock();
+	 double elapsed_time = (double)(c2 - c1) / CLOCKS_PER_SEC;
 	std::cout<<"After: ";
 	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it) {
         std::cout << *it << " ";
     }
 	std::cout<<"\n";
 	
-	std::cout<<"Time to process a range of "<< vec.size()<<" elements with std::vector : "<<elapsed_time * 1e6 <<" us"<<std::endl;
-	 start = clock();
+	std::cout<<"Time to process a range of "<< vec.size()<<" elements with std::vector : "<<elapsed_time * 1000000 <<" us"<<std::endl;
+	 c1 = clock();
 	deq = sort(deq);
-	  end = clock();
-	  elapsed_time = (double)(end - start) / CLOCKS_PER_SEC;
+	  c2 = clock();
+	  elapsed_time = (double)(c2 - c1) / CLOCKS_PER_SEC;
 
-	std::cout<<"Time to process a range of "<< deq.size()<<" elements with std::deque : "<<elapsed_time * 1e6 <<" us"<<std::endl;
-
+	std::cout<<"Time to process a range of "<< deq.size()<<" elements with std::deque : "<<elapsed_time * 1000000 <<" us"<<std::endl;
 	
 }
 catch(const std::exception& e)

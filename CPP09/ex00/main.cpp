@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:57:56 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/23 22:55:43 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/24 23:24:21 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,16 @@ int main(int ac, char **av)
 	    	std::cout<<"Error: could not open file.\n";
             return 1;
         }
-        data_base = storedata();
-        process(filetoread, data_base);
+        try
+        {
+            data_base = storedata();
+            process(filetoread, data_base);
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+        
     }
     else
        std::cout<<"Error: could not open file.\n";
