@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:23:59 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/25 00:34:16 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/25 02:49:13 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int main(int ac, char **av){
 	take_input(s,av);
 	std::vector<int> vec;
 	std::deque<int> deq;
-	int i;
 try
 {
 	vec = StoreData<std::vector<int> >(s);
