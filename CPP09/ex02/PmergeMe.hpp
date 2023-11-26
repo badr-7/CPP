@@ -6,7 +6,7 @@
 /*   By: mel-hous <mel-hous@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:53:38 by mel-hous          #+#    #+#             */
-/*   Updated: 2023/11/24 20:59:22 by mel-hous         ###   ########.fr       */
+/*   Updated: 2023/11/25 02:48:47 by mel-hous         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void insertionSort(T &vec){
         vec[j+1] = tmp;
         i++;
     }
-
 }
 
 template <class T>

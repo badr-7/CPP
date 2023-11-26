@@ -1,19 +1,20 @@
 #include "RPN.hpp"
 bool check_line(std::string line){
     int size = line.size() - 1;
+    int fullsize = line.size() - 1;
 
     while (size >= 0)
     {
         if(line[size] == '-' ||line[size] == '+'||line[size] == '*'||line[size] == '/')
         {
-            if ((unsigned long)(size + 1) < line.size() && line[size+1] != ' '){
+            if (size < fullsize && line[size+1] != ' '){
                return false;
             }
             else
                 size--;
         }
         else if(line[size] >= '0' && line[size] <= '9'){
-           if ((unsigned long)(size + 1) < line.size() && line[size+1] != ' ')
+           if (size < fullsize && line[size+1] != ' ')
                return false;
             else
                 size--;
@@ -31,10 +32,10 @@ std::stack<int> store_data(std::string &s){
     std::stack<int> stack;
     int i = 0;
    while (i <= pose ) {
-        while (i >= 0 && (s[i] == ' ' || s[i] == '\t')) {
+        while (s[i] == ' ' || s[i] == '\t') {
             i++;
         }
-        if (i >= 0 && (s[i] >= '0' && s[i] <= '9'))
+        if (s[i] >= '0' && s[i] <= '9')
             stack.push(s[i] - '0');
         else if(s[i] == '-' ||s[i] == '+'||s[i] == '*'||s[i] == '/')
             action(stack, s[i]);
